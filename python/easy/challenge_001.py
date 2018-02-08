@@ -1,4 +1,5 @@
 def writeToFile(name, age, username):
+    #TODO: *save latest userdata from askUser() to a file, for later access.
     pass
 
 def askUser():
