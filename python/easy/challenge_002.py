@@ -8,10 +8,10 @@ def fun_help():
 
 def cal():
     func_dict = {
-                    'force':cal_force
+                    'force':cal_force,
                     'help':fun_help
     }
-    
+
     print('''Just to calculate
             syntax -> 'function'<space>'inputs' separated by spaces
             type 'help' for info. type 'exit' to close program. ''')
