@@ -12,12 +12,10 @@ def cal():
                     'help':fun_help
     }
 
-    print('''Just to calculate
-            syntax -> 'function'<space>'inputs' separated by spaces
-            type 'help' for info. type 'exit' to close program. ''')
+    print('''Just to calculate.\nsyntax -> 'function'<space>'inputs' separated by spaces\ntype 'help' for info. type 'exit' to close program.''', end='\n')
     
     while True:
-        user_in = input('>').split(' ')
+        user_in = input('> ').split(' ')
         if user_in[0] == 'exit':
             break
     
