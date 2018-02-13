@@ -1,3 +1,4 @@
+#TODO: add more function in calculator.
 def cal_force(*args):
     values = []
     for item in args[0]:
