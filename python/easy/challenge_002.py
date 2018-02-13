@@ -1,10 +1,8 @@
 def cal_force(*args):
     values = []
-    #print(args)
     for item in args[0]:
         values.append(float(item))
-    
-    #print(values)
+
     print(values[0] * values[1])
 
 def fun_help():
