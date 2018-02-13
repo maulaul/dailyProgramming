@@ -1,15 +1,17 @@
-def cal_force(m, a):
-    print(m*a)
+def cal_force(*args):
+    values = []
+    for item in args:
+        values.append(float(item))
+    
+    print(values[0] * values[1])
 
 def fun_help():
     print('''syntax -> 'function'<space>'inputs' separated by spaces
-            example to calculate force of mass 100 and acceleration of 5.
-            force 100 5''')
+            force --> 'force mass_value acceleration_value' ''')
 
 def cal():
     func_dict = {
-                    'force':cal_force,
-                    'help':fun_help
+                    'force':cal_force
     }
 
     print('''Just to calculate.\nsyntax -> 'function'<space>'inputs' separated by spaces\ntype 'help' for info. type 'exit' to close program.''', end='\n')
@@ -18,6 +20,12 @@ def cal():
         user_in = input('> ').split(' ')
         if user_in[0] == 'exit':
             break
-    
+        if user_in[0] == 'help':
+            fun_help()
+        elif (user_in[0] in func_dict.keys()):
+            func_dict[user_in[0]](user_in[1:])
+        else:
+            print("function not available. type 'help' for more info.")
+
 if __name__ == '__main__':
     cal()
