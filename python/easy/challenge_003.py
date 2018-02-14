@@ -12,8 +12,22 @@ def encrypt(line, n):
             index = ALPHABET.find(letter)
             move = (index + n) % ALPHABET_LEN
             encrypt_line += ALPHABET[move]
+        else:
+            encrypt_line += letter
     
     return encrypt_line
+
+def decrypt(line, n):
+    decrypt_line = ''
+    for letter in line:
+        if letter.isalpha():
+            index = ALPHABET.find(letter)
+            move = (abs(index - n)) % ALPHABET_LEN
+            decrypt_line += ALPHABET[move]
+        else:
+            decrypt_line += letter
+
+    return decrypt_line
 
 def caesar():
     try:
