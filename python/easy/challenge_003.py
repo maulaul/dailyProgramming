@@ -1,6 +1,19 @@
 #ALPHABET CHIPERS.
 #TODO raise different error if encrypt/decrypt command not found.
-import sys
+import sys, string
+
+ALPHABET = string.ascii_lowercase
+ALPHABET_LEN = len(ALPHABET)
+
+def encrypt(line, n):
+    encrypt_line = ''
+    for letter in line:
+        if letter.isalpha():
+            index = ALPHABET.find(letter)
+            move = (index + n) % ALPHABET_LEN
+            encrypt_line += ALPHABET[move]
+    
+    return encrypt_line
 
 def caesar():
     try:
@@ -13,4 +26,6 @@ def caesar():
         print("Input file name cannot be empty.")
 
 if __name__ == "__main__":
-    caesar()
+    #caesar()
+    print(encrypt('abcde', 2))
+    print(encrypt('abcde', 28))
