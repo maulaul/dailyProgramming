@@ -18,6 +18,9 @@ def encrypt(line, n):
     return encrypt_line
 
 def decrypt(line, n):
+    if n > ALPHABET_LEN:
+        n = n % 26
+    
     decrypt_line = ''
     for letter in line:
         if letter.isalpha():
@@ -42,4 +45,6 @@ def caesar():
 if __name__ == "__main__":
     #caesar()
     print(encrypt('abcde', 2))
+    print(decrypt(encrypt('abcde', 2), 2))
     print(encrypt('abcde', 28))
+    print(decrypt(encrypt('abcde', 28) ,28))
