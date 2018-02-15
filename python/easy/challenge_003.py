@@ -55,8 +55,5 @@ def caesar():
         print("Input file name cannot be empty.\nMake sure the filename is correct and encrypt/decrypt is specified.")
 
 if __name__ == "__main__":
-    #caesar()
-    print(encrypt('abcde', 2))
-    print(decrypt(encrypt('abcde', 2), 2))
-    print(encrypt('abcde', 28))
-    print(decrypt(encrypt('abcde', 28) ,28))
+    caesar()
+    
