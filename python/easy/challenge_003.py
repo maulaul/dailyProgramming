@@ -25,7 +25,7 @@ def decrypt(line, n):
     for letter in line:
         if letter.isalpha():
             index = ALPHABET.find(letter)
-            move = (abs(index - n)) % ALPHABET_LEN
+            move = (index - n - ALPHABET_LEN) % ALPHABET_LEN
             decrypt_line += ALPHABET[move]
         else:
             decrypt_line += letter
@@ -38,17 +38,17 @@ def caesar():
         filename = sys.argv[1]
         n = 13 #amount of letter move.
         with open(filename) as f_in:
-            lines = list(f)
+            lines = list(f_in)
 
         if sys.argv[2] == 'decrypt':
             for line in lines:
                 processed_lines += decrypt(line, n)
-                with open(filename.split('.')[0] + '_decrypt.txt', w) as f_out:
+                with open(filename.split('.')[0] + '_decrypt.txt', 'w') as f_out:
                     f_out.writelines(processed_lines)
         else:
             for line in lines:
                 processed_lines += encrypt(line, n)
-                with open(filename.split('.')[0] + '_encrypt.txt', w) as f_out:
+                with open(filename.split('.')[0] + '_encrypt.txt', 'w') as f_out:
                     f_out.writelines(processed_lines)
 
     except IndexError as e:
@@ -56,4 +56,3 @@ def caesar():
 
 if __name__ == "__main__":
     caesar()
-    
