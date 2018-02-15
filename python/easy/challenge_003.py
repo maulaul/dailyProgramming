@@ -33,14 +33,26 @@ def decrypt(line, n):
     return decrypt_line
 
 def caesar():
+    processed_lines = ''
     try:
-        #print(sys.argv[1])
-        #print(sys.argv[2])
-        with open(sys.argv[1]) as f_in:
+        filename = sys.argv[1]
+        n = 13 #amount of letter move.
+        with open(filename) as f_in:
             lines = list(f)
 
+        if sys.argv[2] == 'decrypt':
+            for line in lines:
+                processed_lines += decrypt(line, n)
+                with open(filename.split('.')[0] + '_decrypt.txt', w) as f_out:
+                    f_out.writelines(processed_lines)
+        else:
+            for line in lines:
+                processed_lines += encrypt(line, n)
+                with open(filename.split('.')[0] + '_encrypt.txt', w) as f_out:
+                    f_out.writelines(processed_lines)
+
     except IndexError as e:
-        print("Input file name cannot be empty.")
+        print("Input file name cannot be empty.\nMake sure the filename is correct and encrypt/decrypt is specified.")
 
 if __name__ == "__main__":
     #caesar()
