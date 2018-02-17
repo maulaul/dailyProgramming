@@ -1,5 +1,5 @@
-#TODO read user.txt and pass.txt
-#TODO ask user to input username, password
+#TODO read user.txt and pass.txt DONE
+#TODO ask user to input username, password 
 #TODO if user exist and password correct print something like program unlocked
 #TODO if user exist and password incorrect ask 2 more time before program off
 #TODO if user doesnt exit, ask continously.
@@ -20,11 +20,19 @@ def read_db():
 
     return users, passw
 
-def check_user(username, f):
-    pass
+def check_user(uname, users):
+    if uname in users:
+        return users[uname]
+    else
+        print('user/pass incorrect.')
+        return ''
 
-def check_pass(username, f):
-    pass
+def check_pass(pasw, key,passw):
+    if pasw == passw[key]:
+        return True
+    else:
+        print('user/pass incorrect.')
+        return ''
 
 def aProgram():
     #create program loop here.
