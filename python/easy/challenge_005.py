@@ -32,11 +32,31 @@ def check_pass(pasw, key,passw):
         return True
     else:
         print('user/pass incorrect.')
-        return ''
+        return False
 
-def aProgram():
-    #create program loop here.
-    pass
+def aProgram();
+    users, passw = read_db()
+    tries = 0
+    logged_in = False
+    print('Basic Login.')
+
+    While (tries < 4 and not logged_in)
+        uname = input('username: ')
+        userpass = input('password: ')
+
+        key = check_user(uname, users)
+        
+        if key:
+            logged_in = check_pass(userpass, key, passw)
+            if not logged_in:
+                tries += 1
+        else:
+            tries += 1
+
+    if logged_in:
+        print('You are logged in.')
+    else:
+        print('Program terminate.')
 
 if __name__ == '__main__':
     aProgram()
