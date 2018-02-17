@@ -3,12 +3,20 @@
 #TODO if user exist and password correct print something like program unlocked
 #TODO if user exist and password incorrect ask 2 more time before program off
 #TODO if user doesnt exit, ask continously.
-def read_db(filename):
-    with open('users.txt') as f:
-        users = list(f)
+def read_db():
+    with open('users005.txt') as f:
+        users = {}
 
-    with open('passw.txt') as f:
-        passw = list(f)
+        for row in list(f):
+            user_data = row.split(",")
+            users[user_data[0]] = user_data[1]
+
+    with open('passw005.txt') as f:
+        passw = {}
+
+        for row in list(f):
+            pasw_data = row.split(",")
+            passw[pasw_data[0]] = pasw_data[1]
 
     return users, passw
 
